@@ -1,0 +1,256 @@
+/* FONT FAMILY **/
+
+@font-face {
+  font-family: "YoungSerif-Regular";
+  src: url("assets/fonts/young-serif/YoungSerif-Regular.tff") format("truetype");
+}
+@font-face {
+  font-family: "Outfit-Black";
+  src: url("assets/fonts/outfit/static/Outfit-Black.tff") format("truetype");
+}
+@font-face {
+  font-family: "Outfit-Bold";
+  src: url("assets/fonts/outfit/static/Outfit-Bold.tff") format("truetype");
+}
+@font-face {
+  font-family: "Outfit-ExtraBold";
+  src: url("assets/fonts/outfit/static/Outfit-ExtraBold.tff") format("truetype");
+}
+@font-face {
+  font-family: "Outfit-ExtraLight";
+  src: url("assets/fonts/outfit/static/Outfit-ExtraLight.tff")
+    format("truetype");
+}
+@font-face {
+  font-family: "Outfit-Light";
+  src: url("assets/fonts/outfit/static/Outfit-Light.tff") format("truetype");
+}
+@font-face {
+  font-family: "Outfit-Medium";
+  src: url("assets/fonts/outfit/static/Outfit-Medium.tff") format("truetype");
+}
+@font-face {
+  font-family: "Outfit-Regular";
+  src: url("assets/fonts/outfit/static/Outfit-Regular.tff") format("truetype");
+}
+@font-face {
+  font-family: "Outfit-SemiBold";
+  src: url("assets/fonts/outfit/static/Outfit-SemiBold.tff") format("truetype");
+}
+@font-face {
+  font-family: "Outfit-Thin";
+  src: url("assets/fonts/outfit/static/Outfit-Thin.tff") format("truetype");
+}
+/** CSS RESET STYLES **/
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/** END OF CSS RESET STYLES **/
+:root {
+  --primary-color: hsl(30, 10%, 34%);
+  --secondary-color: hsl(14, 45%, 36%);
+  --tertiary-color: hsl(332, 51%, 32%);
+  --heading-color: hsl(13, 41%, 20%);
+  --demarcation-color: hsla(14, 45%, 36%, 0.3);
+
+  --bg-primary-color: hsl(322, 100%, 98%);
+
+  --ff-regular: "Outfit";
+  --ff-accent: "Young Serif";
+
+  --fw-regular: 400;
+  --fw-bold: 500;
+  --fw-bolder: 700;
+
+  --fs-xlarge: 2.2rem;
+  --fs-large: 1.7rem;
+  --fs-semilarge: 1.2rem;
+  --fs-regular: 1rem;
+}
+
+.container {
+  max-width: min(100%, 1440px);
+  margin: 1rem auto;
+  font-family: var(--ff-regular);
+  color: var(--secondary-color);
+  font-weight: var(--fw-regular);
+  overflow: hidden;
+  padding-inline: 2rem;
+  font-size: var(--fs-regular);
+}
+
+.container h2 {
+  margin-bottom: 1rem;
+}
+
+.hero {
+  padding: 0;
+  margin-top: 0;
+}
+
+.sub-heading {
+  font-size: var(--fs-large);
+  color: var(--secondary-color);
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-bold);
+}
+
+h1.main-header {
+  font-size: var(--fs-xlarge);
+  font-weight: var(--fw-bold);
+  color: var(--heading-color);
+  margin-block: 0.5rem;
+  font-family: var(--ff-accent);
+}
+
+.preparation h2 {
+  font-size: var(--fs-semilarge);
+  color: var(--tertiary-color);
+  margin-bottom: 0.5rem;
+}
+
+.preparation span {
+  font-weight: var(--fw-bolder);
+}
+
+.preparation div {
+  background-color: var(--bg-primary-color);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+ul,
+ol {
+  padding-left: 1rem;
+}
+
+li {
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.ingredients ul {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--demarcation-color);
+}
+
+ol li span,
+ol li::marker {
+  font-weight: var(--fw-bolder);
+}
+
+ol li::marker {
+  color: var(--secondary-color);
+}
+
+ol li span {
+  color: var(--primary-color);
+}
+
+.nutrition table {
+  text-align: center;
+}
+
+.instructions ol {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--demarcation-color);
+}
+
+table {
+  display: flex;
+  gap: 1rem;
+  align-items: space-evenly;
+  flex-flow: column wrap;
+  padding-top: 1rem;
+}
+
+tr {
+  flex: auto;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--demarcation-color);
+}
+
+td {
+  flex: 1;
+  text-align: left;
+  padding: 0.5rem;
+}
+
+td[data-cell="value"] {
+  font-weight: var(--fw-bolder);
+}
+
+@media (min-width: 376px) {
+  :root {
+    --fs-xlarge: 1.7rem;
+    --fs-large: 1.5rem;
+    --fs-semilarge: 1.2rem;
+    --fs-regular: 0.8rem;
+  }
+  .hero {
+    margin: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+}
