@@ -249,8 +249,13 @@ td[data-cell="value"] {
     --fs-regular: 0.8rem;
   }
   .hero {
-    margin: 2rem;
+    margin: 2rem auto;
     border-radius: 1rem;
     overflow: hidden;
+    max-width: 600px;
+  }
+
+  .container {
+    max-width: 600px;
   }
 }
